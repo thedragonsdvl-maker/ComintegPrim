@@ -1,57 +1,77 @@
-/* Stiluri Generale */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+/* Reset & General */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
 body { background: #fff; color: #333; line-height: 1.6; }
 .container { padding: 80px 10%; text-align: center; }
-.bg-light { background: #f9f9f9; }
+.bg-light { background: #f8f8f8; }
 
-/* Navigatie */
-header { background: #1a1a1a; color: #fff; padding: 20px 10%; position: fixed; width: 100%; top: 0; z-index: 1000; }
+/* Navigație */
+header { background: #1a1a1a; color: #fff; padding: 15px 10%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
 nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: bold; }
+.logo { font-size: 22px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
 .logo span { color: #ffcc00; }
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 20px; }
-nav ul li a { color: #fff; text-decoration: none; font-size: 14px; text-transform: uppercase; }
+nav ul li a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: #ffcc00; }
 
-/* Hero */
+/* Hero Section - Fixed Overlay & Button spacing */
 .hero { 
     height: 100vh; 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1350&q=80'); 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=1350&q=80'); 
     background-size: cover; 
+    background-position: center;
     display: flex; 
     align-items: center; 
     justify-content: center; 
     text-align: center; 
     color: #fff;
+    padding: 0 20px;
 }
-.hero-content h1 { font-size: 48px; margin-bottom: 20px; }
-.btn { background: #ffcc00; color: #000; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+.hero-content { display: flex; flex-direction: column; align-items: center; gap: 25px; max-width: 900px; }
+.hero-content h1 { font-size: clamp(1.8rem, 6vw, 3.5rem); font-weight: 800; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.hero-content p { font-size: 1.1rem; color: #eee; max-width: 600px; }
 
-/* Grid si Carduri */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-.card, .product-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.product-card img { width: 100%; border-radius: 5px; margin-bottom: 15px; }
-.section-title { font-size: 32px; border-bottom: 4px solid #ffcc00; display: inline-block; padding-bottom: 10px; }
+/* Buton "Solicită Ofertă" */
+.btn { 
+    background: #ffcc00; 
+    color: #1a1a1a; 
+    padding: 16px 45px; 
+    text-decoration: none; 
+    font-weight: 800; 
+    border-radius: 4px; 
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+}
+.btn:hover { background: #e6b800; transform: translateY(-3px); box-shadow: 0 6px 25px rgba(255, 204, 0, 0.5); }
 
-/* Widget Chat (Stil MAIB) */
-#chat-wrapper { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
-#chat-button { 
-    width: 65px; height: 65px; background: #ffcc00; border-radius: 50%; 
-    display: flex; align-items: center; justify-content: center; 
-    cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 30px;
+/* Grid Servicii */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
+.card { background: #fff; padding: 45px 30px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 4px solid transparent; }
+.card:hover { transform: translateY(-10px); border-bottom: 4px solid #ffcc00; }
+.icon { font-size: 45px; margin-bottom: 20px; display: block; }
+.section-title { font-size: 30px; margin-bottom: 15px; border-bottom: 5px solid #ffcc00; display: inline-block; padding-bottom: 5px; }
+
+/* Tabel Scrollable Modern */
+.scroll-container { 
+    width: 100%; 
+    overflow-x: auto; 
+    background: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-#chat-window { 
-    width: 320px; height: 420px; background: #fff; border-radius: 15px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; flex-direction: column; 
-    position: absolute; bottom: 80px; right: 0; overflow: hidden; 
-}
-.chat-header { background: #1a1a1a; color: #ffcc00; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-.chat-body { flex: 1; padding: 20px; background: #f4f4f4; }
-.bot-msg { background: #fff; padding: 10px; border-radius: 10px; font-size: 14px; }
-.chat-footer { padding: 15px; display: flex; border-top: 1px solid #ddd; }
-#chat-input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 5px; outline: none; }
-.chat-footer button { background: #ffcc00; border: none; padding: 0 15px; margin-left: 5px; border-radius: 5px; cursor: pointer; }
+.produse-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+.produse-table th { background: #1a1a1a; color: #ffcc00; padding: 18px; text-align: left; font-size: 14px; }
+.produse-table td { padding: 15px; border-bottom: 1px solid #f0f0f0; text-align: left; font-size: 15px; }
+.produse-table img { border-radius: 4px; border: 1px solid #ddd; }
 
 /* Footer */
-footer { background: #1a1a1a; color: #fff; padding: 40px; text-align: center; }
-footer a { color: #ffcc00; text-decoration: none; }
+footer { background: #111; color: #fff; padding: 60px 20px; text-align: center; }
+footer a { color: #ffcc00; text-decoration: none; font-weight: bold; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul { display: none; }
+    .container { padding: 60px 5%; }
+    .hero-content h1 { font-size: 2.2rem; }
+}
