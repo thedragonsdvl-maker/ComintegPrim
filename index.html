@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cominteg Prim | Construcții și Instalații Moldova</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Stiluri adăugate pentru funcționalitatea de chat în timp real */
-        .user-msg {
-            text-align: right;
-            background: #ffcc00;
-            color: #000;
-            padding: 10px;
-            border-radius: 10px 10px 0 10px;
-            margin: 10px 0;
-            font-size: 13px;
-            align-self: flex-end;
-            max-width: 80%;
-            margin-left: auto;
-        }
-        .bot-msg {
-            background: #fff;
-            padding: 10px;
-            border-radius: 10px 10px 10px 0;
-            font-size: 13px;
-            margin-top: 10px;
-            max-width: 80%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-    </style>
-</head>
+
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69ee5be9abfa8b1c36eaabe4/1jn5he2ms';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    </head>
 <body>
 
     <header>
@@ -63,7 +51,7 @@
             <div class="card">
                 <div class="icon">🚿</div>
                 <h3>Instalații Sanitare</h3>
-                <p>Montaj profesional pentru echipamente de plumbing și separatoare.</p>
+                <p>Montaj profesional pentru plumbing și separatoare de grăsimi.</p>
             </div>
             <div class="card">
                 <div class="icon">🔧</div>
@@ -74,82 +62,47 @@
     </section>
 
     <section id="produse" class="container bg-light">
-        <h2 class="section-title">Echipamente și Produse</h2>
-        <div class="grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200?text=Separator+Grasimi" alt="Separator">
-                <h4>Separatoare de Grăsimi</h4>
-                <p>Standarde europene pentru bucătării profesionale.</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200?text=Sisteme+Tevi" alt="Tevi">
-                <h4>Sisteme de Țevi</h4>
-                <p>Materiale de înaltă calitate pentru durabilitate.</p>
-            </div>
+        <h2 class="section-title">Catalog Produse</h2>
+        <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">(Glisează stânga-dreapta pe telefon pentru detalii)</p>
+        
+        <div class="scroll-container">
+            <table class="produse-table">
+                <thead>
+                    <tr>
+                        <th>Imagine</th>
+                        <th>Produs</th>
+                        <th>Categorie</th>
+                        <th>Specificații Tehnice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/60" alt="p1"></td>
+                        <td>Separator Grăsimi 50L</td>
+                        <td>Sanitare</td>
+                        <td>Inox Premium, Debit 0.5 l/s</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/60" alt="p2"></td>
+                        <td>Țeavă PVC 110mm</td>
+                        <td>Instalații</td>
+                        <td>Rezistență înaltă, lungime 3m</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/60" alt="p3"></td>
+                        <td>Pompă Submersibilă</td>
+                        <td>Echipamente</td>
+                        <td>Debit 5000 L/h, Inox</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <div id="chat-wrapper">
-        <div id="chat-window">
-            <div class="chat-header">
-                <strong>Asistent Cominteg</strong>
-                <span class="close-chat" onclick="toggleChat()">✖</span>
-            </div>
-            <div class="chat-body" id="chat-content">
-                <p class="bot-msg">Bună ziua! Lăsați un mesaj aici (includeți un nr. de telefon sau email) și vă răspundem imediat.</p>
-            </div>
-            
-            <form action="https://formspree.io/f/xzdyqplg" method="POST" class="chat-footer" id="chat-form">
-                <input type="text" name="message" id="chat-input" placeholder="Scrie mesajul..." required>
-                <button type="submit">➤</button>
-            </form>
-        </div>
-        
-        <div id="chat-button" onclick="toggleChat()">
-            <span class="msg-icon">💬</span>
-        </div>
-    </div>
-
     <footer id="contact">
         <p>&copy; 2026 Cominteg Prim | Email: <a href="mailto:thedragonsdvl@gmail.com">thedragonsdvl@gmail.com</a></p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #777;">Chișinău, Republica Moldova</p>
     </footer>
 
-    <script>
-        function toggleChat() {
-            const chatWindow = document.getElementById('chat-window');
-            chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        // Script pentru trimiterea mesajului fără a reîncărca pagina
-        const form = document.getElementById('chat-form');
-        form.onsubmit = function(e) {
-            e.preventDefault(); // Oprește deschiderea paginii noi
-            
-            const input = document.getElementById('chat-input');
-            const content = document.getElementById('chat-content');
-            const userMessage = input.value;
-
-            // Trimite datele către Formspree prin Fetch API
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    // Afișează mesajul tău în fereastra de chat
-                    content.innerHTML += `<div class="user-msg">${userMessage}</div>`;
-                    // Afișează confirmarea de la "bot"
-                    content.innerHTML += `<p class="bot-msg">Am primit mesajul tău! Echipa Cominteg te va contacta la <strong>thedragonsdvl@gmail.com</strong>.</p>`;
-                    
-                    input.value = ""; // Resetează câmpul de text
-                    
-                    // Scroll automat jos în chat
-                    content.scrollTop = content.scrollHeight;
-                } else {
-                    alert("A apărut o eroare la trimitere. Te rugăm să încerci din nou.");
-                }
-            });
-        };
-    </script>
 </body>
 </html>
